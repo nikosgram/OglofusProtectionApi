@@ -20,7 +20,7 @@ public @interface CommandHandler
 {
     String value();
 
-    String description();
+    String description() default "";// if empty getting auto from language file. value + "CommandDescription";
 
     String usage();
 
