@@ -11,10 +11,6 @@
     <description>OglofusProtectionApi is part of OglofusProtection</description>
     <packaging>pom</packaging>
 
-    <modules>
-        <module>OglofusCommons</module>
-    </modules>
-
     <developers>
         <developer>
             <id>nikosgram13</id>
