@@ -65,5 +65,5 @@ public interface ProtectionRegion
      * @param name   the new name.
      * @return the response.
      */
-    ActionResponse changeName( UUID sender, String name );
+    ActionResponse changeName( Object sender, String name );
 }
