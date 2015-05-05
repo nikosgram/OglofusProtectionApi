@@ -16,6 +16,8 @@
 
 package me.nikosgram.oglofus.protection.api.region;
 
+import java.util.UUID;
+
 public interface ProtectionLocation
 {
     int getX();
@@ -23,6 +25,8 @@ public interface ProtectionLocation
     int getY();
 
     int getZ();
+
+    UUID getWorld();
 
     String getWorldName();
 
