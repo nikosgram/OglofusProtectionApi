@@ -156,7 +156,7 @@ public interface ProtectionStaff
      * @param target the player
      * @return the response.
      */
-    ActionResponse invite( Object sender, UUID target );
+    ActionResponse invite( UUID sender, UUID target );
 
     /**
      * Invite a player to join at this area
@@ -173,7 +173,7 @@ public interface ProtectionStaff
      * @param target the player
      * @return the response.
      */
-    ActionResponse kick( Object sender, UUID target );
+    ActionResponse kick( UUID sender, UUID target );
 
     /**
      * Kick a player to join at this area
