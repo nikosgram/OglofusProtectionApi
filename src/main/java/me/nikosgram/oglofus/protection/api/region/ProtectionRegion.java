@@ -16,6 +16,8 @@
 
 package me.nikosgram.oglofus.protection.api.region;
 
+import me.nikosgram.oglofus.protection.api.action.ActionResponse;
+
 import java.util.UUID;
 
 public interface ProtectionRegion
@@ -52,6 +54,7 @@ public interface ProtectionRegion
      * Change the region's name.
      *
      * @param name the new name.
+     * @return the response.
      */
-    void changeName( String name );
+    ActionResponse changeName( String name );
 }

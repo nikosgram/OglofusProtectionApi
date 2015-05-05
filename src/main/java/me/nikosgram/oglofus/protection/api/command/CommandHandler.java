@@ -20,11 +20,26 @@ public @interface CommandHandler
 {
     String value();
 
-    String description() default "";// if empty getting auto from language file. value + "CommandDescription";
+    String description() default ""; // if empty getting auto from language file. value + "CommandDescription";
 
-    String usage();
+    String usage() default "";
 
-    String permission() default "";
+    String permission() default ""; // if empty getting auto a new permission. "oglofus.command." + value;
+
+    /**
+     * The minimum number of arguments. This should be 0 or above.
+     *
+     * @return the minimum number of arguments
+     */
+    int min() default 0;
+
+    /**
+     * The maximum number of arguments. Use -1 for an unlimited number
+     * of arguments.
+     *
+     * @return the maximum number of arguments
+     */
+    int max() default -1;
 
     boolean console() default true;
 }
