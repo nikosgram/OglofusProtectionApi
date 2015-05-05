@@ -57,4 +57,13 @@ public interface ProtectionRegion
      * @return the response.
      */
     ActionResponse changeName( String name );
+
+    /**
+     * Change the region's name.
+     *
+     * @param sender who want to change the name.
+     * @param name   the new name.
+     * @return the response.
+     */
+    ActionResponse changeName( Object sender, String name );
 }
