@@ -106,20 +106,6 @@ public interface ProtectionStaff
     boolean hasMemberAccess( UUID target );
 
     /**
-     * Get all the blocks inside the region.
-     *
-     * @return the blocks.
-     */
-    < T > Collection< T > getBlocks( Class< T > tClass );
-
-    /**
-     * Get all the entities inside the region.
-     *
-     * @return the entities
-     */
-    < T > Collection< T > getEntities( Class< T > tClass );
-
-    /**
      * Get the rank from player
      *
      * @param target the {@link UUID}

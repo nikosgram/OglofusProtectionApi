@@ -18,6 +18,7 @@ package me.nikosgram.oglofus.protection.api.region;
 
 import me.nikosgram.oglofus.protection.api.action.ActionResponse;
 
+import java.util.Collection;
 import java.util.UUID;
 
 public interface ProtectionRegion
@@ -49,6 +50,20 @@ public interface ProtectionRegion
      * @return the staff {@link ProtectionStaff}.
      */
     ProtectionStaff getProtectionStaff();
+
+    /**
+     * Get all the blocks inside the region.
+     *
+     * @return the blocks.
+     */
+    < T > Collection< T > getBlocks( Class< T > tClass );
+
+    /**
+     * Get all the entities inside the region.
+     *
+     * @return the entities
+     */
+    < T > Collection< T > getEntities( Class< T > tClass );
 
     /**
      * Change the region's name.
