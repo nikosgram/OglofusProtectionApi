@@ -30,7 +30,7 @@ public interface ProtectionLocation
 
     String getWorldName();
 
-    void add( int x, int y, int z );
+    ProtectionLocation add( int x, int y, int z );
 
     < T > T getWorldAs( Class< T > tClass );
 
