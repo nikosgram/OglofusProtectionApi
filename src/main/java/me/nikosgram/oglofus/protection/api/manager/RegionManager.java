@@ -21,15 +21,16 @@ import me.nikosgram.oglofus.protection.api.region.ProtectionLocation;
 import me.nikosgram.oglofus.protection.api.region.ProtectionRegion;
 
 import java.util.Collection;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface RegionManager
 {
-    ProtectionRegion getRegion( UUID target );
+    Optional< ProtectionRegion > getRegion( UUID target );
 
-    ProtectionRegion getRegion( String target );
+    Optional< ProtectionRegion > getRegion( String target );
 
-    ProtectionRegion getRegion( ProtectionLocation location );
+    Optional< ProtectionRegion > getRegion( ProtectionLocation location );
 
     Collection< ProtectionRegion > getRegions();
 
