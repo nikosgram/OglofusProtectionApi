@@ -29,10 +29,11 @@ public interface RegionManager
 
     ProtectionRegion getRegion( String target );
 
+    ProtectionRegion getRegion( ProtectionLocation location );
+
     Collection< ProtectionRegion > getRegions();
 
-    ActionResponse createProtectionArea( ProtectionLocation location, UUID sender );
+    ActionResponse createProtectionArea( ProtectionLocation location, UUID owner );
 
-    ActionResponse deleteProtectionArea( ProtectionRegion area, UUID sender );
+    ActionResponse deleteProtectionArea( ProtectionRegion area, UUID owner );
 }
-

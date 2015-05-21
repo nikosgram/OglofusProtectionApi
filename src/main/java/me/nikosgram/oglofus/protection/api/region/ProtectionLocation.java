@@ -30,7 +30,7 @@ public interface ProtectionLocation
 
     String getWorldName();
 
-    < T > T getWorld( Class< T > tClass );
+    < T > T getWorldAs( Class< T > tClass );
 
     < T > T getLocationAs( Class< T > tClass );
 }

@@ -23,6 +23,10 @@ public enum ProtectionRank
      */
     Owner,
     /**
+     * The officer has access to kick and invite players in {@link ProtectionRegion}
+     */
+    Officer,
+    /**
      * The member has access to build inside from the {@link ProtectionRegion}
      */
     Member,

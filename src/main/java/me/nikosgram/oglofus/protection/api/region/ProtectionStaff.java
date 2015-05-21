@@ -19,51 +19,72 @@ package me.nikosgram.oglofus.protection.api.region;
 import me.nikosgram.oglofus.protection.api.action.ActionResponse;
 
 import java.util.Collection;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface ProtectionStaff
 {
     /**
-     * Get the owners.
+     * Get the region's owner.
      *
-     * @return the owners.
+     * @param tClass get owner as who?
+     * @param <T>    the owner as who.
+     * @return the owner.
      */
-    < T > Collection< T > getOwners( Class< T > tClass );
+    < T > Optional< T > getOwnerAs( Class< T > tClass );
 
     /**
-     * Get the owners ids.
+     * Get the region's owner.
      *
-     * @return owners as {@link UUID}.
+     * @return the owner's uuid.
      */
-    Collection< UUID > getOwnersUuid();
+    UUID getOwner();
+
+    /**
+     * Get the officers.
+     *
+     * @param tClass get officers as who?
+     * @param <T>    the officers as who.
+     * @return the members.
+     */
+    < T > Collection< T > getOfficersAs( Class< T > tClass );
+
+    /**
+     * Get the officers ids.
+     *
+     * @return the members as {@link UUID}.
+     */
+    Collection< UUID > getOfficers();
 
     /**
      * Get the members.
      *
+     * @param tClass get members as who?
+     * @param <T>    the members as who.
      * @return the members.
      */
-    < T > Collection< T > getMembers( Class< T > tClass );
+    < T > Collection< T > getMembersAs( Class< T > tClass );
 
     /**
      * Get the members ids.
      *
      * @return the members as {@link UUID}.
      */
-    Collection< UUID > getMembersUuid();
+    Collection< UUID > getMembers();
 
     /**
      * Get the staff.
      *
      * @return the staff.
      */
-    < T > Collection< T > getStaff( Class< T > tClass );
+    < T > Collection< T > getStaffAs( Class< T > tClass );
 
     /**
      * Get the staff ids.
      *
      * @return staff as {@link UUID}.
      */
-    Collection< UUID > getStaffUuid();
+    Collection< UUID > getStaff();
 
     /**
      * Check if a player is owner.
@@ -74,10 +95,18 @@ public interface ProtectionStaff
     boolean isOwner( UUID target );
 
     /**
+     * Check if a player is officer.
+     *
+     * @param target the {@link UUID}
+     * @return true if the player is officer
+     */
+    boolean isOfficer( UUID target );
+
+    /**
      * Check if a player is owner.
      *
      * @param target the {@link UUID}
-     * @return true if the player is owner
+     * @return true if the player is member
      */
     boolean isMember( UUID target );
 
@@ -96,6 +125,14 @@ public interface ProtectionStaff
      * @return true if the player has owner access
      */
     boolean hasOwnerAccess( UUID target );
+
+    /**
+     * Check if a player has officer access.
+     *
+     * @param target the {@link UUID}
+     * @return true if the player has officer access
+     */
+    boolean hasOfficerAccess( UUID target );
 
     /**
      * Check if a player has member access.
@@ -129,6 +166,21 @@ public interface ProtectionStaff
     void broadcast( String message, ProtectionRank rank );
 
     /**
+     * Broadcast, to protection area's members, a message
+     *
+     * @param message the message as raw
+     */
+    void broadcastRaw( Object message );
+
+    /**
+     * Broadcast, to protection area's members with rank, a message
+     *
+     * @param message the message as raw
+     * @param rank    who you want to display the message
+     */
+    void broadcastRaw( Object message, ProtectionRank rank );
+
+    /**
      * Reflag this region.
      *
      * @return the response.
@@ -142,7 +194,7 @@ public interface ProtectionStaff
      * @param target the player
      * @return the response.
      */
-    ActionResponse invite( Object sender, UUID target );
+    ActionResponse invite( UUID sender, UUID target );
 
     /**
      * Invite a player to join at this area
@@ -159,7 +211,7 @@ public interface ProtectionStaff
      * @param target the player
      * @return the response.
      */
-    ActionResponse kick( Object sender, UUID target );
+    ActionResponse kick( UUID sender, UUID target );
 
     /**
      * Kick a player to join at this area
@@ -168,4 +220,57 @@ public interface ProtectionStaff
      * @return the response.
      */
     ActionResponse kick( UUID target );
+
+    /**
+     * Promote a Member to Officer in this region.
+     *
+     * @param sender who want to promote the player
+     * @param target the player
+     * @return the response.
+     */
+    ActionResponse promote( UUID sender, UUID target );
+
+    /**
+     * Promote a member to Officer in this region.
+     *
+     * @param target the player
+     * @return the response.
+     */
+    ActionResponse promote( UUID target );
+
+    /**
+     * Demote a Officer to Member in this region.
+     *
+     * @param sender who want to demote the player
+     * @param target the player
+     * @return the response.
+     */
+    ActionResponse demote( UUID sender, UUID target );
+
+    /**
+     * Demote a Officer to Member in this region.
+     *
+     * @param target the player
+     * @return the response.
+     */
+    ActionResponse demote( UUID target );
+
+    /**
+     * Change the rank from a player in this region.
+     *
+     * @param sender who want to change the rank from the player
+     * @param target the player
+     * @param rank   the rank
+     * @return the response.
+     */
+    ActionResponse changeRank( UUID sender, UUID target, ProtectionRank rank );
+
+    /**
+     * Change the rank from a player in this region.
+     *
+     * @param target the player
+     * @param rank   the rank
+     * @return the response.
+     */
+    ActionResponse changeRank( UUID target, ProtectionRank rank );
 }
