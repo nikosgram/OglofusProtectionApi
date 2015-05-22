@@ -16,12 +16,12 @@
 
 package me.nikosgram.oglofus.protection.api.manager;
 
+import com.google.common.base.Optional;
 import me.nikosgram.oglofus.protection.api.action.ActionResponse;
 import me.nikosgram.oglofus.protection.api.region.ProtectionLocation;
 import me.nikosgram.oglofus.protection.api.region.ProtectionRegion;
 
 import java.util.Collection;
-import java.util.Optional;
 import java.util.UUID;
 
 public interface RegionManager

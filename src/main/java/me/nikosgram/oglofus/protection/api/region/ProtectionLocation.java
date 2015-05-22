@@ -16,6 +16,8 @@
 
 package me.nikosgram.oglofus.protection.api.region;
 
+import com.google.common.base.Optional;
+
 import java.util.UUID;
 
 public interface ProtectionLocation
@@ -32,7 +34,7 @@ public interface ProtectionLocation
 
     ProtectionLocation add( int x, int y, int z );
 
-    < T > T getWorldAs( Class< T > tClass );
+    < T > Optional< T > getWorldAs( Class< T > tClass );
 
-    < T > T getLocationAs( Class< T > tClass );
+    < T > Optional< T > getLocationAs( Class< T > tClass );
 }
