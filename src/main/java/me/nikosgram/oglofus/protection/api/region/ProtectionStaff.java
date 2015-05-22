@@ -16,10 +16,10 @@
 
 package me.nikosgram.oglofus.protection.api.region;
 
+import com.google.common.base.Optional;
 import me.nikosgram.oglofus.protection.api.action.ActionResponse;
 
 import java.util.Collection;
-import java.util.Optional;
 import java.util.UUID;
 
 public interface ProtectionStaff
