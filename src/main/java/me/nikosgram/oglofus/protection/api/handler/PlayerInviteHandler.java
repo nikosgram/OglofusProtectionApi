@@ -14,30 +14,14 @@
  * limitations under the License.
  */
 
-package me.nikosgram.oglofus.protection.api.manager;
+package me.nikosgram.oglofus.protection.api.handler;
 
 import com.google.common.base.Optional;
-import me.nikosgram.oglofus.protection.api.action.ActionResponse;
-import me.nikosgram.oglofus.protection.api.handler.Handler;
-import me.nikosgram.oglofus.protection.api.region.ProtectionLocation;
 import me.nikosgram.oglofus.protection.api.region.ProtectionRegion;
 
-import java.util.Collection;
 import java.util.UUID;
 
-public interface RegionManager
+public interface PlayerInviteHandler extends Handler
 {
-    Optional< ProtectionRegion > getRegion( UUID target );
-
-    Optional< ProtectionRegion > getRegion( String target );
-
-    Optional< ProtectionRegion > getRegion( ProtectionLocation location );
-
-    Collection< ProtectionRegion > getRegions();
-
-    ActionResponse createProtectionArea( ProtectionLocation location, UUID owner );
-
-    ActionResponse deleteProtectionArea( ProtectionRegion area, UUID owner );
-
-    void registerHandler( Handler handler );
+    boolean execute( ProtectionRegion region, UUID target, Optional< UUID > sender );
 }
