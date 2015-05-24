@@ -16,9 +16,9 @@
 
 package me.nikosgram.oglofus.protection.api.handler;
 
+import com.google.common.base.Optional;
 import me.nikosgram.oglofus.protection.api.region.ProtectionRegion;
 
-import java.util.Optional;
 import java.util.UUID;
 
 public interface PlayerPromoteHandler extends Handler
