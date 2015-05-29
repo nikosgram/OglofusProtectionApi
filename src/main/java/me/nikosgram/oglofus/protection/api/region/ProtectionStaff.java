@@ -194,7 +194,7 @@ public interface ProtectionStaff
      * @param target the player
      * @return the response.
      */
-    ActionResponse invite( UUID sender, UUID target );
+    ActionResponse invite( Object sender, UUID target );
 
     /**
      * Invite a player to join at this area
@@ -211,7 +211,7 @@ public interface ProtectionStaff
      * @param target the player
      * @return the response.
      */
-    ActionResponse kick( UUID sender, UUID target );
+    ActionResponse kick( Object sender, UUID target );
 
     /**
      * Kick a player to join at this area
@@ -228,7 +228,7 @@ public interface ProtectionStaff
      * @param target the player
      * @return the response.
      */
-    ActionResponse promote( UUID sender, UUID target );
+    ActionResponse promote( Object sender, UUID target );
 
     /**
      * Promote a member to Officer in this region.
@@ -245,7 +245,7 @@ public interface ProtectionStaff
      * @param target the player
      * @return the response.
      */
-    ActionResponse demote( UUID sender, UUID target );
+    ActionResponse demote( Object sender, UUID target );
 
     /**
      * Demote a Officer to Member in this region.
@@ -263,7 +263,7 @@ public interface ProtectionStaff
      * @param rank   the rank
      * @return the response.
      */
-    ActionResponse changeRank( UUID sender, UUID target, ProtectionRank rank );
+    ActionResponse changeRank( Object sender, UUID target, ProtectionRank rank );
 
     /**
      * Change the rank from a player in this region.

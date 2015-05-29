@@ -23,5 +23,5 @@ import java.util.UUID;
 
 public interface ProtectionCreateHandler extends Handler
 {
-    boolean execute( ProtectionVector vector, Optional< UUID > sender );
+    boolean execute( ProtectionVector vector, Optional< Object > sender );
 }

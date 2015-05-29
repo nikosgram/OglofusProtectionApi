@@ -23,6 +23,8 @@ import java.util.UUID;
 
 public interface InvitationManager
 {
+    ActionResponse invite( Object sender, UUID target, ProtectionRegion region );
+
     ActionResponse invite( UUID target, ProtectionRegion region );
 
     ActionResponse cancel( UUID target, ProtectionRegion region );

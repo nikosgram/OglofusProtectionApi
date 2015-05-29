@@ -23,5 +23,5 @@ import java.util.UUID;
 
 public interface PlayerDemoteHandler extends Handler
 {
-    boolean execute( ProtectionRegion region, UUID target, Optional< UUID > sender );
+    boolean execute( ProtectionRegion region, UUID target, Optional< Object > sender );
 }
