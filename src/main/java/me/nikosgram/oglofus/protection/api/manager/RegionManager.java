@@ -35,9 +35,9 @@ public interface RegionManager
 
     Collection< ProtectionRegion > getRegions();
 
-    ActionResponse createProtectionArea( ProtectionLocation location, UUID owner );
+    ActionResponse createProtectionRegion( ProtectionLocation location, UUID owner );
 
-    ActionResponse deleteProtectionArea( ProtectionRegion area );
+    ActionResponse deleteProtectionRegion( ProtectionRegion area );
 
     void registerHandler( Handler handler );
 }
